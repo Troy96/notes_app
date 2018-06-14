@@ -1,0 +1,23 @@
+{
+  "name": "notes-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Troy96/nodejslearning.git"
+  },
+  "author": "Tuhin Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Troy96/nodejslearning/issues"
+  },
+  "homepage": "https://github.com/Troy96/nodejslearning#readme",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "yargs": "^4.7.1"
+  }
+}

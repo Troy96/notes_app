@@ -1,21 +1,32 @@
 console.log('Starting app..');
 
-const fs = require('fs');
 
-const os = require('os');
+const fs = require('fs');
+const _ = require('lodash');
+const yargs = require('yargs');
 
 const notes = require('./notes.js'); //Realtive path startin from . (root) //notes will store whatever is being exported from notes.js
 
-var res = notes.add(5,9);
+const argv = yargs.argv;
+var command =argv._[0];
+console.log('Command:', command);
+console.log('Yargs:', argv);
 
-console.log(res);
-// var user = os.userInfo();
+if(command=='add'){
 
+	notes.addNote(argv.title, argv.body);
+}
+else if(command=='list'){
+	notes.getAll();
+}
+else if(command=='read'){
+	notes.readNote(argv.title);
+}
 
-// fs.appendFile('greetings.txt',`Hello ${user.username}! and your age is ${notes.age}`, function (err){
+else if(command=='remove'){
+	notes.removeNote(argv.title);
+}
 
-// 	if(err){
-// 		console.log('Unable to write to file!!');
-// 	}
-
-// }); 
+else{
+	console.log('Command not recognized');
+}
